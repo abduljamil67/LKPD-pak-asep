@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><title>LKPD 6</title></head>
+<body>
+    <h3>Manipulasi DOM</h3>
+    <p id="paragrafWarna">Teks ini akan berubah warna.</p>
+    <button onclick="ubahWarna()">Ubah Warna</button>
+    <br><br>
+    <div id="kotakKosong" style="border:1px solid #ccc; padding:10px;">
+        (Div Kosong)
+    </div>
+    <br>
+    <button onclick="tambahElemen()">Tambah Elemen ke Div</button>
+
+    <script>
+        // REFLEKSI:
+        /* 1. Fungsi getElementById?
+           Untuk mencari dan memilih elemen HTML berdasarkan ID uniknya supaya bisa diubah oleh JS.
+           
+           2. Cara tambah elemen?
+           Buat elemen dulu (createElement), isi teksnya, lalu tempelkan (appendChild).
+        */
+
+        // LATIHAN 1: Ubah Warna
+        function ubahWarna() {
+            let p = document.getElementById("paragrafWarna");
+            p.style.color = "blue"; 
+            p.style.fontWeight = "bold";
+            p.textContent = "Warna teks sudah berubah jadi Biru!";
+        }
+
+        // LATIHAN 2: Tambah Elemen
+        function tambahElemen() {
+            let div = document.getElementById("kotakKosong");
+            
+            
+            if(div.textContent.includes("(Div Kosong)")) {
+                div.textContent = ""; 
+            }
+
+            
+            let pBaru = document.createElement("p");
+            pBaru.textContent = "Ini elemen baru yang ditambahkan JS.";
+            pBaru.style.backgroundColor = "#f0f0f0";
+            
+            
+            div.appendChild(pBaru);
+        }
+    </script>
+</body>
+</html>

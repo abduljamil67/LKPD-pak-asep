@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>LKPD 8</title></head>
+<body>
+    <h3>Validasi Password</h3>
+    <input type="password" id="passInput" placeholder="Masukkan Password">
+    <button onclick="cekPassword()">Daftar</button>
+    
+    <p id="pesanFeedback" style="color: grey;"></p>
+
+    <script>
+        // REFLEKSI:
+        /* 1. Kenapa validasi penting?
+           Agar data yang masuk ke server bersih, sesuai format, dan aman.
+           
+           2. Risiko tidak validasi?
+           Bisa terjadi error di database, data sampah menumpuk, atau kena hack.
+        */
+
+        // LATIHAN: Validasi panjang min 8 karakter
+        function cekPassword() {
+            let pass = document.getElementById("passInput").value;
+            let feedback = document.getElementById("pesanFeedback");
+
+            feedback.style.color = "red";
+
+            if (pass.length === 0) {
+                feedback.textContent = "Password tidak boleh kosong.";
+            } else if (pass.length < 8) {
+                feedback.textContent = "Password terlalu pendek! Minimal 8 karakter.";
+            } else {
+                feedback.style.color = "green";
+                feedback.textContent = "Password Valid. Pendaftaran Berhasil!";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>LKPD 7</title></head>
+<body>
+    <h3>Event Handling</h3>
+    
+    <p id="teksRahasia">Ini teks rahasia.</p>
+    <button onclick="sembunyikan()">Sembunyikan Teks</button>
+
+    <hr>
+
+    <label>Ketik Sesuatu: </label>
+    <input type="text" oninput="tampilLive(this.value)">
+    <p>Output Live: <span id="liveText" style="font-weight:bold;">...</span></p>
+
+    <script>
+        // REFLEKSI:
+        /* 1. Beda onclick dan onmouseover?
+           Onclick = bereaksi saat diklik.
+           Onmouseover = bereaksi saat kursor menyentuh/lewat di atas elemen.
+        */
+
+        // LATIHAN 1: Sembunyikan Elemen
+        function sembunyikan() {
+            document.getElementById("teksRahasia").style.display = "none";
+        }
+
+        // LATIHAN 2: Live Input
+        function tampilLive(teks) {
+            document.getElementById("liveText").textContent = teks;
+        }
+    </script>
+</body>
+</html>

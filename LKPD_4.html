@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>LKPD 4</title></head>
+<body>
+    <h3>Fungsi</h3>
+    <p id="hasilLuas"></p>
+    <p id="hasilSapa"></p>
+
+    <script>
+        // REFLEKSI:
+        /* 1. Kenapa fungsi efisien?
+           Kita tidak perlu tulis kode yang sama berulang ulang. Cukup panggil nama fungsinya.
+           
+           2. Beda Parameter dan Return?
+           Parameter = Data yang masuk ke fungsi (Input).
+           Return = Data yang keluar dari fungsi (Output).
+        */
+
+        // LATIHAN 1: Fungsi Luas Persegi
+        function hitungLuasPersegi(sisi) {
+            return sisi * sisi;
+        }
+        document.getElementById("hasilLuas").textContent = "Luas Persegi (Sisi 6): " + hitungLuasPersegi(6);
+
+        // LATIHAN 2: Fungsi Sapaan
+        function sapa(nama) {
+            return "Halo, " + nama + "! Semangat belajar.";
+        }
+        document.getElementById("hasilSapa").textContent = sapa("Siswa");
+    </script>
+</body>
+</html>

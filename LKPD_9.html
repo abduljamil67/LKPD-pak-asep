@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><title>LKPD 9 - Mini Project</title></head>
+<body>
+    <h3>Game Tebak Angka (1-10)</h3>
+    <input type="number" id="inputTebakan" placeholder="Masukkan angka">
+    <button onclick="tebak()">Coba Tebak!</button>
+    <button onclick="resetGame()">Reset</button>
+
+    <p id="hasilGame"></p>
+
+    <script>
+        // REFLEKSI:
+        /* 1. Tantangan terbesar?
+           Mengatur logika "if-else" agar merespon benar jika angka tepat, dan memberi petunjuk jika salah.
+           
+           2. Fitur tambahan?
+           Ingin menambah "Nyawa" (kesempatan menebak maksimal 3 kali).
+        */
+
+        let angkaRahasia = Math.floor(Math.random() * 10) + 1;
+
+        function tebak() {
+            let tebakanUser = parseInt(document.getElementById("inputTebakan").value);
+            let output = document.getElementById("hasilGame");
+
+            if (isNaN(tebakanUser)) {
+                output.style.color = "red";
+                output.textContent = "Masukkan angka dulu!";
+            } else if (tebakanUser === angkaRahasia) {
+                output.style.color = "green";
+                output.textContent = "SELAMAT! Tebakan kamu BENAR: " + angkaRahasia;
+            } else if (tebakanUser < angkaRahasia) {
+                output.style.color = "orange";
+                output.textContent = "Terlalu KECIL. Coba lagi.";
+            } else {
+                output.style.color = "orange";
+                output.textContent = "Terlalu BESAR. Coba lagi.";
+            }
+        }
+
+        // Fitur Tambahan: Reset
+        function resetGame() {
+            angkaRahasia = Math.floor(Math.random() * 10) + 1;
+            document.getElementById("inputTebakan").value = "";
+            document.getElementById("hasilGame").textContent = "Game di-reset. Silakan tebak angka baru!";
+            document.getElementById("hasilGame").style.color = "black";
+        }
+    </script>
+</body>
+</html>

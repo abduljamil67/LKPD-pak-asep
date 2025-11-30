@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>LKPD 2</title>
+</head>
+<body>
+  
+  <h2>Cek Kelulusan</h2>
+ <input type="number" id="nilai" placeholder="masukkan nilai">
+ <button onclick="cekkelulusan()">cek kelulusan</button>
+ 
+ <h2>Cek Usia</h2>
+ <input type="number" id="usia" placeholder="masukkan usia">
+ <button onclick="cekusia()">Cek Usia</button>
+ 
+  <script>
+    function cekkelulusan() {
+      let nilai = document.getElementById("nilai").value;
+    
+      if (nilai >= 70) {
+          alert("LULUS");
+      } else {
+          alert("TIDAK LULUS");
+      }
+    }
+    
+    function cekusia() {
+      let usia = document.getElementById("usia").value;
+      
+      if (usia <= 13) {
+          alert("Anak-anak");
+      } else if (usia <= 17) {
+          alert("Remaja");
+      } else {
+          alert("Dewasa");
+      }
+    }
+    
+    /* Refleksi
+    if digunakan untuk mengecek kondisi pertama kalau kondisi ini benar akan dijqlankan perintah yang ada didalamnya
+    else if digunakan untuk mengecek kondisi lain bila kondisi pertama (if) salah
+    
+    jika ada bagian else maka bagian else akan dijalankan,jika tidak ada bagian else maka program tidak menjalankan apa apa
+    */
+  </script>
+  </body>
+</html>

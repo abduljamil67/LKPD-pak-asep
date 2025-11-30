@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>LKPD 3</title></head>
+<body>
+    <h3>Looping</h3>
+    <p>Total Penjumlahan (1-10): <span id="hasilTotal"></span></p>
+    <p>Bilangan Genap (2-20): <span id="hasilGenap"></span></p>
+
+    <script>
+        // REFLEKSI:
+        /* 
+           'For' dipakai kalau kita tahu pasti berapa kali mengulang misal 10 kali
+           'While' dipakai kalau kita tidak tahu kapan berhentinya misal tunggu user klik
+        */
+
+        // LATIHAN 1: Penjumlahan 1-10
+        let total = 0;
+        for(let i = 1; i <= 10; i++) {
+            total += i;
+        }
+        document.getElementById("hasilTotal").textContent = total;
+
+        // LATIHAN 2: Bilangan Genap 2-20
+        let angkaGenap = ""; 
+        for(let i = 2; i <= 20; i += 2) {
+            angkaGenap += i + " "; 
+        }
+        document.getElementById("hasilGenap").textContent = angkaGenap;
+    </script>
+</body>
+</html>
