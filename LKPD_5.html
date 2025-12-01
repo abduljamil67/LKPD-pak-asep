@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>LKPD 5</title></head>
+<body>
+    <h3>Daftar Teman (Loop Array)</h3>
+    <ul id="listTeman"></ul> <h3>Rata-rata Nilai</h3>
+    <p id="infoNilai"></p>
+
+    <script>
+        // REFLEKSI:
+        /* 1. Keuntungan Array?
+           Bisa simpan banyak data dalam satu nama variabel. Lebih rapi daripada bikin var1, var2, var3.
+           
+           2. Tambah elemen baru?
+           Pakai method .push("dataBaru").
+        */
+
+        // LATIHAN 1: Menampilkan Array ke List
+        let teman = ["Alya", "Budi", "Citra", "Dedi", "Eka"];
+        let ul = document.getElementById("listTeman");
+
+        for(let i = 0; i < teman.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = teman[i]; 
+            ul.appendChild(li); 
+        }
+
+        // LATIHAN 2: Rata-rata Nilai
+        let nilai = [80, 90, 75, 85, 95];
+        let total = 0;
+        for(let j = 0; j < nilai.length; j++) {
+            total += nilai[j];
+        }
+        let rataRata = total / nilai.length;
+        document.getElementById("infoNilai").textContent = "Rata-rata nilai: " + rataRata;
+    </script>
+</body>
+</html>
